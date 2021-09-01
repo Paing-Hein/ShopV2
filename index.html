@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Bootstrap Icon CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <title>Flexbox Test</title>
+  <style>
+    body{
+      font-family: 'San Francisco', Helvetica, Arial, san-serif;
+      overflow-x: hidden;
+    }
+    /*NAVIGATION BAR*/
+    .navbar-nav li:hover>ul.dropdown-menu{
+      display: block;
+    }
+    .dropdown-submenu .dropdown-menu{
+      /*margin-top: -5px;*/
+      top: 60%;
+      left: 100%;
+    }
+    #id-nav{
+      background-color: indigo;
+      /*border: 2px solid yellow;*/
+    }
+    #div-nav{
+
+    }
+    
+    /*SLIDE SHOW PHOTO*/
+    #div-slide{
+      /*border: 2px solid black;*/
+      background-color: aliceblue;
+    }
+    #carouselExampleDark{
+      /*border: 2px solid black;*/
+    }
+    .carousel-inner{
+      width: 45vw;
+      height: 30vw;
+      /*border: 2px solid red;*/
+      margin: auto;
+      /*margin-left: 25%; /*Half of width*/*/
+    }
+    .carousel-item{
+      width: 100%; /*To fit the item div into inner div*/
+      height: 100%; /*To fit the item div into inner div*/
+      /*border: 2px solid green;*/
+    }
+    div.carousel-item img{
+      max-height: 70%; /*Not to cover the label*/
+      max-width: 100%; 
+      margin: auto; /*To horizontally center the image*/
+      /*border: 2px solid blue;*/
+    }
+    div.spinner-grow{
+      margin-left: 0;
+      width: 25px;
+      height: 25px;
+    }
+    img.img-item{
+      max-width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+    div.Quota{
+      font-size: 2vw;
+      color: darkgoldenrod;
+      /*font-family: "Sacramento";*/
+      text-shadow: 4px 4px 4px #aaa;
+      animation: 30s linear infinite slide-right;
+      animation-delay: 1s;
+    }
+    @media (min-width: 991px) { 
+      div.Quota{
+      font-size: 1.5vw;
+      }
+    }
+    @keyframes slide-right{ 
+      from { margin-left: 100%; width:300% }
+        to {margin-left: -100%; width:300%}
+    }
+    #ItemDetail{
+      visibility: hidden;}
+    #ItemDetail:after{
+      visibility: visible;
+    }
+    /*div.card-header.lft{
+      background: linear-gradient(90deg,white,indigo);
+    }*/
+    div.card-header{
+      background: linear-gradient(90deg,indigo,white);
+    }
+    div.card-body{
+      background: AliceBlue;
+      /*font-weight: lighter;*/
+    }
+    #div-page{
+      border-radius: 15px;
+      background: linear-gradient(90deg,Deepskyblue,Indigo,Orange,gray,Navy,Navy,gray,Orange,Indigo,Deepskyblue);
+    }
+    footer span{
+      font-size: 1vw;
+      font-weight: lighter;
+      font-style: italic;
+      color: darkgray;
+    }
+  </style>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark" id="id-nav">
+  <div class="container-fluid mx-5 p-0" id="div-nav">
+    <a class="navbar-brand" href="#">ဝယ်ရင်းလှူ (Buy & Donate)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <!-- <img src="73414-hamburger.gif"> -->
+      </span>
+      <!-- <img src="https://assets3.lottiefiles.com/packages/lf20_g41pgt4j.json"> -->
+      <!-- <span class="navbar-toggler-icon "></span> -->
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Submenu</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Submenu 0</a></li>
+                <li><a class="dropdown-item" href="#">Submenu 1</a></li>
+                <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Submenu2</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Submenu 2-0</a></li>
+                  <li><a class="dropdown-item" href="#">Submenu 2-1</a></li>
+                </ul>
+              </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <!-- Photo Slide Show/ Carousal -->
+  <div class="my-3 mx-5" id="div-slide">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <!-- Spinner Grow -->
+        <div class="spinner-grow text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <img src="undraw_book_lover_mkck.svg" class="d-block" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <!-- Spinner Grow -->
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <img src="undraw_true_love_cy8x.svg" class="d-block " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1500">
+        <!-- Spinner Grow -->
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <img src="undraw_online_wishes_dlmr.svg" class="d-block " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+  <div class="Quota">
+    <p> You buy, is you donate! We guarantee the non-profit of personnel!</p>
+  </div>
+ <!-- Item Section -->
+ <section id="section-item" class="mx-5">
+  <!-- Left Item -->
+  <div class="row row-cols-1 row-cols-md-2 g-3">
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header lft">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Details</a>
+            </li>
+          </ul>
+        </div>
+          <img src="honey.png" class="card-img-top img-item p-2" alt="...">
+            <div class="card-body text-dark">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+      </div>
+    </div>
+
+  <!-- Right Item -->
+    <div class="col">
+      <div class="card text-center bg-light">
+        <div class="card-header rht">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Details</a>
+            </li>
+          </ul>
+        </div>
+          <img src="images.jpg" class="card-img-top img-item p-2" alt="...">
+            <div class="card-body text-dark">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Couple -->
+  <div class="row row-cols-1 row-cols-md-2 g-3 mt-1">
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header lft">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Details</a>
+            </li>
+          </ul>
+        </div>
+          <img src="obama_book.png" class="card-img-top img-item p-2" alt="...">
+            <div class="card-body text-dark">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+      </div>
+    </div>
+
+  <!-- Right Item -->
+    <div class="col">
+      <div class="card text-center bg-light">
+        <div class="card-header rht">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Details</a>
+            </li>
+          </ul>
+        </div>
+          <img src="bagan_puppet.jpg" class="card-img-top img-item p-2" alt="...">
+            <div class="card-body text-dark">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+  <!-- Pagination -->
+<section>
+  <div class="mx-5 my-3 mt-5" id="div-page">
+    <nav aria-label="...">
+      <ul class="pagination pagination-sm justify-content-center">
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">1</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+  <footer>
+    <div class="mx-5 my-3 text-dark text-center">
+      <a href=""><i class="bi bi-whatsapp fa-3x"></i></a>
+      <a href=""><i class="bi bi-facebook"></i></a>
+      <a href=""><i class="bi bi-linkedin"></i></a>
+      <a href=""><i class="bi bi-instagram"></i></a>
+    </div>
+    <div class="mx-5 my-3 text-dark text-center">
+      <span>This site is set up to contribute or to render the aid to the people in our capacity.</span>
+    </div>
+  </footer>
+  <!-- Javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
