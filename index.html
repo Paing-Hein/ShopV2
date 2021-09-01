@@ -39,10 +39,15 @@
     }
     .carousel-inner{
       width: 45vw;
-      height: 30vw;
+      height: 50vw;
       /*border: 2px solid red;*/
       margin: auto;
       /*margin-left: 25%; /*Half of width*/*/
+    }
+    @media (min-width: 991px) { 
+      .carousel-inner{
+      height: 30vw;
+      }
     }
     .carousel-item{
       width: 100%; /*To fit the item div into inner div*/
@@ -52,8 +57,9 @@
     div.carousel-item img{
       max-height: 70%; /*Not to cover the label*/
       max-width: 100%; 
+      /*object-fit: scale-down;*/
       margin: auto; /*To horizontally center the image*/
-      /*border: 2px solid blue;*/
+      border: 2px solid blue;
     }
     div.spinner-grow{
       margin-left: 0;
@@ -93,6 +99,9 @@
     div.card-header{
       background: linear-gradient(90deg,indigo,white);
     }
+    div.card-header button, div.card-header button:hover{
+      color: navajowhite;
+    }
     div.card-body{
       background: AliceBlue;
       /*font-weight: lighter;*/
@@ -100,6 +109,16 @@
     #div-page{
       border-radius: 15px;
       background: linear-gradient(90deg,Deepskyblue,Indigo,Orange,gray,Navy,Navy,gray,Orange,Indigo,Deepskyblue);
+    }
+    /*#section-item div.col{
+      height: 500px;
+    }*/
+    div.div-tab-item{
+      height: 320px;
+    }
+    div.card-body{
+      height: 120px;
+      overflow: auto;
     }
     footer span{
       font-size: 1vw;
@@ -309,7 +328,38 @@
       </div>
     </div>
   </div>
- </section>
+
+  <!-- Testing Nav-Tabs -->
+  <div class="row row-cols-1 row-cols-md-2 g-3 mt-1">
+    <div class="col">
+      <div class="card text-center bg-light">
+        <div class="card-header lft pb-0 ps-2 m-0 border-0">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Card</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Detail</button>
+            </div>
+          </nav>
+        </div>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <!-- <span>This is the main content.</span> -->
+              <img src="bagan_puppet.jpg" class="card-img-top img-item p-2" alt="..."> 
+              <div class="card-body text-dark">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="div-tab-item">
+                <span>This is the product detail.</span>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+</section>
 
   <!-- Pagination -->
 <section>
@@ -329,8 +379,6 @@
     <div class="mx-5 my-3 text-dark text-center">
       <a href=""><i class="bi bi-whatsapp fa-3x"></i></a>
       <a href=""><i class="bi bi-facebook"></i></a>
-      <a href=""><i class="bi bi-linkedin"></i></a>
-      <a href=""><i class="bi bi-instagram"></i></a>
     </div>
     <div class="mx-5 my-3 text-dark text-center">
       <span>This site is set up to contribute or to render the aid to the people in our capacity.</span>
